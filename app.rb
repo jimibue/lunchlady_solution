@@ -7,10 +7,10 @@ test_customer = Customer.new(100, "Bob")
 puts test_customer.name
 puts test_customer.wallet_balance
 
-test_dish = Dish.new("Pizza", 20.00)
+dish = Dish.new("Pizza", 20.99)
+dish1 = Dish.new("Hambuger", 10.99)
 
-puts test_dish.name
-puts test_dish.price
+dishes = [dish, dish1]
 
-test_resturaunt = Resturaunt.new()
+test_resturaunt = Resturaunt.new(dishes)
 p test_resturaunt.main_dishes
