@@ -2,8 +2,6 @@ require_relative "customer"
 require_relative "dish"
 require_relative "resturaunt"
 
-# test_customer = Customer.new(100, "Bob")
-
 # puts test_customer.name
 # puts test_customer.wallet_balance
 
@@ -14,10 +12,20 @@ def make_test_resturaunt
   main_dishes = [dish, dish1]
   side_dishes = [Dish.new("fries", 2.99), Dish.new("salad", 1.99)]
 
+  test_customer = Customer.new(100, "Bob")
+  test_customer1 = Customer.new(10, "Sally")
+
+  resturaunt = Resturaunt.new(main_dishes, side_dishes)
+
+  resturaunt.customers << test_customer
+  resturaunt.customers << test_customer1
+
   #insating a class Resturaunt and am returing
-  Resturaunt.new(main_dishes, side_dishes)
+  resturaunt
 end
 
 test_resturaunt = make_test_resturaunt
 test_resturaunt.display_main_menu
 test_resturaunt.display_side_menu
+
+# p test_resturaunt.customers

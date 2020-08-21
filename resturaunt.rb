@@ -1,9 +1,10 @@
 class Resturaunt
-  attr_accessor :main_dishes, :side_dishes
+  attr_accessor :main_dishes, :side_dishes, :customers
 
   def initialize(main_dishes, side_dishes)
     @main_dishes = main_dishes
     @side_dishes = side_dishes
+    @customers = []
   end
 
   def display_main_menu
@@ -18,5 +19,8 @@ class Resturaunt
     @side_dishes.each_with_index do |dish, index|
       puts "#{index + 1}) #{dish}"
     end
+  end
+
+  def take_order
   end
 end
