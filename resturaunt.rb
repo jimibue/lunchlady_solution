@@ -21,32 +21,32 @@ class Resturaunt
     end
   end
 
-  def take_order
-    # grab a customers from array
-    @current_customer = @customers.shift
+  def get_main_order
     puts "Hello #{@current_customer.name} what would like to order"
-
     display_main_menu
-
-    # get input
     user_main_choice_index = gets.chomp.to_i - 1
     main_dish = @main_dishes[user_main_choice_index]
+    # add dish to customer_order
     puts "you ordered #{main_dish.name}"
     puts "you It is #{main_dish.price}"
+  end
 
+  def get_side_order
     display_side_menu
     user_side_choice_index = gets.chomp.to_i - 1
     side_dish1 = @side_dishes[user_side_choice_index]
+    # add dish to customer_order
     puts "you ordered #{side_dish1.name}"
     puts "you It is #{side_dish1.price}"
+  end
 
-    display_side_menu
-    user_side_choice_index = gets.chomp.to_i - 1
-    side_dish2 = @side_dishes[user_side_choice_index]
-    puts "you ordered #{side_dish2.name}"
-    puts "you It is #{side_dish2.price}"
+  def take_order
+    # grab a customers from array
+    @current_customer = @customers.shift
 
-    puts "price is #{main_dish.price + side_dish1.price + side_dish2.price}"
+    get_main_order
+
+    get_side_order
 
     # get input
     # display_side_menu
