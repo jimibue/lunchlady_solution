@@ -27,5 +27,6 @@ end
 test_resturaunt = make_test_resturaunt
 test_resturaunt.display_main_menu
 test_resturaunt.display_side_menu
+test_resturaunt.take_order
 
 # p test_resturaunt.customers
